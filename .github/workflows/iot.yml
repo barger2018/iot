@@ -1,6 +1,6 @@
 on: [push]
 
-name: AzurePowerShell
+name: IoT_Dev
 
 jobs:
 
