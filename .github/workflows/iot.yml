@@ -5,11 +5,11 @@ name: IoT_Dev
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: 'Iot_Dev'
     steps:
 
     - name: Login via Az module
       uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
+        environment: 'AzureStack'
         enable-AzPSSession: true 
