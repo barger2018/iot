@@ -3,11 +3,11 @@ on: [push]
 name: IoT_Dev
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
+    environment: IoT_Dev
     steps:
-    
+
     - name: Login via Az module
       uses: azure/login@v1
       with:
