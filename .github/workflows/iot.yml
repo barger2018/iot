@@ -1,6 +1,6 @@
 on: [push]
 
-name: AzurePowerShellSample
+name: AzurePowerShell
 
 jobs:
 
