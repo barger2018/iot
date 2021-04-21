@@ -21,13 +21,14 @@ resource "azurerm_resource_group" "iot" {
   location = "East US"
 }
 
-# resource "azurerm_storage_account" "iot" {
-#   name                     = "bargeriotstorage"
-#   resource_group_name      = azurerm_resource_group.iot.name
-#   location                 = azurerm_resource_group.iot.location
-#   account_tier             = "Standard"
-#   account_replication_type = "LRS"
-# }
+resource "azurerm_storage_account" "iot" {
+  name                     = "bargeriotstorage"
+  resource_group_name      = azurerm_resource_group.iot.name
+  location                 = azurerm_resource_group.iot.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  allow_blob_public_access = true
+}
 
 # resource "azurerm_storage_container" "iot" {
 #   name                  = "iot-container"
