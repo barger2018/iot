@@ -3,20 +3,34 @@ on: [push]
 name: IoT_Dev
 
 jobs:
-  build:
+
+  Terraform-Apply:
     runs-on: ubuntu-latest
+    
     steps:
-
-    - name: Login via Az module
-      uses: azure/login@v1
+    - uses: actions/checkout@v2
+    - uses: hashicorp/setup-terraform@v1.1.0
       with:
-        creds: ${{secrets.AZURE_CREDENTIALS}}
-        enable-AzPSSession: true 
-        
-    - name: Run Azure PowerShell script
-      uses: azure/powershell@v1
-      with:
-        inlineScript: |
-          Write-Host "Hello Github Actions"
-        azPSVersion: '3.1.0'
+        cli_config_credentials_hostname: app.terraform.io
+        cli_config_credentials_token: ${{ secrets.TF_TOKEN }}
+        terraform_version: 0.14.0
+      
+    - name: Terraform fmt
+      id: fmt
+      run: terraform fmt -recursive
 
+    - name: Terraform Init
+      id: init
+      run: terraform init -no-color
+
+    - name: Terraform Validate
+      id: validate
+      run: terraform validate -no-color
+
+    - name: Terraform Plan
+      id: plan
+      run: terraform plan -no-color
+
+    - name: Terraform Apply
+      id: apply
+      run: terraform apply -auto-approve -no-color
