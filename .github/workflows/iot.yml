@@ -4,7 +4,7 @@ name: IoT_Dev
 
 jobs:
 
-  Terraform-Apply:
+  Terraform-Plan:
     runs-on: ubuntu-latest
     
     steps:
