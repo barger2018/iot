@@ -32,7 +32,7 @@ resource "azurerm_storage_account" "iot" {
 resource "azurerm_storage_container" "iot" {
   name                  = "iot-container"
   storage_account_name  = azurerm_storage_account.iot.name
-  container_access_type = "private"
+  container_access_type = "public"
 }
 
 resource "azurerm_iothub" "example" {
