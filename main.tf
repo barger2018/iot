@@ -30,11 +30,11 @@ resource "azurerm_storage_account" "iot" {
   allow_blob_public_access = true
 }
 
-# resource "azurerm_storage_container" "iot" {
-#   name                  = "iot-container"
-#   storage_account_name  = azurerm_storage_account.iot.name
-#   container_access_type = "container"
-# }
+resource "azurerm_storage_container" "iot" {
+  name                  = "iot-container"
+  storage_account_name  = azurerm_storage_account.iot.name
+  container_access_type = "blob"
+}
 
 # resource "azurerm_iothub" "example" {
 #   name                = "Example-IoTHub"
