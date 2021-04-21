@@ -36,6 +36,7 @@ resource "azurerm_storage_container" "iot" {
   container_access_type = "blob"
 }
 
+
 # resource "azurerm_iothub" "example" {
 #   name                = "Example-IoTHub"
 #   resource_group_name = azurerm_resource_group.iot.name
