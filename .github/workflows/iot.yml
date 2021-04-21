@@ -12,4 +12,11 @@ jobs:
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
         enable-AzPSSession: true 
+        
+    - name: Run Azure PowerShell script
+      uses: azure/powershell@v1
+      with:
+        inlineScript: |
+          Write-Host "Hello Github Actions"
+        azPSVersion: '3.1.0'
 
