@@ -38,7 +38,7 @@ resource "azurerm_storage_container" "iot" {
 
 
 resource "azurerm_iothub" "example" {
-  name                = "iothub"
+  name                = "bargeriothub"
   resource_group_name = azurerm_resource_group.iot.name
   location            = azurerm_resource_group.iot.location
 
