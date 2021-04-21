@@ -21,6 +21,7 @@ resource "azurerm_resource_group" "iot" {
   location = "East US"
 }
 
+
 # resource "azurerm_storage_account" "iot" {
 #   name                     = "bargeriotstorage"
 #   resource_group_name      = azurerm_resource_group.iot.name
