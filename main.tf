@@ -65,6 +65,13 @@ resource "azurerm_iothub" "example" {
     endpoint_names = ["export"]
     enabled        = true
   }
+}
 
-  
+resource "azurerm_container_registry" "acr" {
+  name                     = "iotcontainers"
+  resource_group_name      = azurerm_resource_group.iot.name
+  location                 = azurerm_resource_group.iot.location
+  sku                      = "Premium"
+  admin_enabled            = false
+  georeplication_locations = ["East US", "West Europe"]
 }
