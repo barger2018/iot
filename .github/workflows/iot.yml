@@ -24,7 +24,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - run: |
-        docker build IoTMod/EdgeSolution/modules/SampleModule/Dockerfile.arm32v7
+        docker build IoTMod/EdgeSolution/modules/SampleModule
       
     - name: Terraform fmt
       id: fmt
