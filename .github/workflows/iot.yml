@@ -24,7 +24,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - run: |
-        docker build  --rm -f "IoTMod/EdgeSolution/modules/SampleModule/Dockerfile.arm32v7" -t bargercontainers.azurecr.io/samplemodule:0.0.1-arm32v7 "IoTMod/EdgeSolution/modules/SampleModule" --platform amr32v7
+        docker build  --rm -f "IoTMod/EdgeSolution/modules/SampleModule/Dockerfile.arm32v7" -t bargercontainers.azurecr.io/samplemodule:0.0.1-arm32v7 "IoTMod/EdgeSolution/modules/SampleModule" --platform arm32v7
       
     - name: Terraform fmt
       id: fmt
